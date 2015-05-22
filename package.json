@@ -11,16 +11,35 @@
     "email": "npm@knappi.org",
     "url": "https://github.com/nknapp"
   },
+  "bugs": {
+    "url": "https://github.com/nknapp/multilang-extract-comments/issues"
+  },
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "test": "standard && jasmine"
+    "test": "jasmine && standard",
+    "format": "standard --format"
   },
-  "dependencies": {},
+  "dependencies": {
+    "comment-patterns": "^0.5.0",
+    "line-counter": "^1.0.3",
+    "quotemeta": "0.0.0"
+  },
   "devDependencies": {
+    "code-context": "^0.5.0",
     "jasmine": "^2.3.1",
+    "should": "^6.0.3",
     "standard": "^3.11.0",
-    "verb": "^0.7.4"
+    "verb": "^0.8.2"
   },
-  "keywords": []
+  "keywords": [
+    "extract",
+    "comments",
+    "apidoc"
+  ],
+  "standard": {
+    "ignore": [
+      "spec/fixtures/**"
+    ]
+  }
 }
