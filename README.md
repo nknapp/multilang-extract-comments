@@ -40,7 +40,7 @@ and the following code
 
 ```js
 var comments = require('multilang-extract-comments')(string);
-``
+```
 
 The variable `comments` now contains:
 
@@ -81,7 +81,7 @@ and the following code
 
 ```hbs
 var comments = require('multilang-extract-comments')(string, { filename: 'handlebars.hbs'});
-``
+```
 
 The variable `comments` now contains:
 
