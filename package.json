@@ -1,6 +1,6 @@
 {
   "name": "multilang-extract-comments",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Extract comments from source files of various languages",
   "repository": {
     "type": "git",
