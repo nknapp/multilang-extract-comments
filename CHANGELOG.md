@@ -5,7 +5,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## v0.1.1 - 2015-05-23
 ### Fixes
 
-Documentatio errors fixed
+Documentation errors fixed
 
 ## v0.1.0 - 2015-05-23
 ### Initial version
