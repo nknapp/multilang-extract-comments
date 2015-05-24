@@ -55,7 +55,7 @@ The variable `comments` now contains:
   },
   "8": {
     "begin": 8,
-    "end": 10,
+    "end": 9,
     "codeStart": 10,
     "content": "A single line comments\nMore of it directly below\n",
     "code": "function anotherFunction () {"
