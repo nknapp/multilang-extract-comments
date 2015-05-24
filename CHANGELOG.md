@@ -2,7 +2,7 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.1.2 - 2015-05-24
 ### Fixes
 
 * **Issue #1**: Change computation of last comment line to be one character earlier. 
