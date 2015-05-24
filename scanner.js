@@ -78,8 +78,8 @@ function Scanner (pattern) {
         {
           // The order of the .countUpTo-calls must be preserved or errors will occur
           begin: counter.countUpTo(match.index),
-          end: counter.countUpTo(commentEndIndex),
-          codeStart: counter.countUpTo(codeStartIndex),
+          end: counter.countUpTo(commentEndIndex - 1),
+          codeStart: counter.countUpTo(Math.min(codeStartIndex, contents.length - 1)),
           content: content
         })
       // The start of the next code part

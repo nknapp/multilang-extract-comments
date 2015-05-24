@@ -52,4 +52,15 @@ describe('extract comments from Handlebars', function () {
     }
     )
   })
+
+})
+
+describe('comment-only', function () {
+  it('should not fail, if the hbs partial solely consists of a comment', function () {
+    var str = fs.readFileSync(require.resolve('./fixtures/only-comments.hbs'))
+    var comments = extract(str, {
+      filename: 'only-comments.hbs'
+    })
+    console.log(comments)
+  })
 })
