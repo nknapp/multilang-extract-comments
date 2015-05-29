@@ -23,6 +23,7 @@
   "dependencies": {
     "comment-patterns": "^0.5.1",
     "line-counter": "^1.0.3",
+    "lodash": "^3.9.3",
     "quotemeta": "0.0.0"
   },
   "devDependencies": {
