@@ -39,7 +39,6 @@ describe('extract comments from javascript', function () {
     })
   })
 
-
   it('should work with comments that have slashes.', function () {
     extract('/**\n * this /is/ a/ comment\n*/\nnext line\n').should.eql({
       '1': {

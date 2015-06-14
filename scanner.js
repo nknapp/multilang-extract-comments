@@ -24,7 +24,7 @@ var util = require('util')
  * @param {number} pattern.cg.contentStart
  * @constructor
  */
-function Scanner(pattern) {
+function Scanner (pattern) {
   var _this = this
   // Shortcut for capturing group constants
   var cg = pattern.cg
@@ -34,7 +34,7 @@ function Scanner(pattern) {
    * @param commentMatch
    * @returns {*}
    */
-  function contentCg(commentMatch) {
+  function contentCg (commentMatch) {
     var start = cg.contentStart
     var end = start + pattern.middle.length
     for (var i = start; i < end; i++) {
@@ -103,7 +103,7 @@ function Scanner(pattern) {
  * @param {string} `string` a multiline string
  * @returns {string} a string of spaces or tabs
  */
-function minIndent(string) {
+function minIndent (string) {
   var result = string
     // Match all leading spaces with one following non-space (multiline)
     // This results in an array where all relevant line-indents are present with

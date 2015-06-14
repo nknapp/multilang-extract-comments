@@ -30,7 +30,7 @@ describe('extract comments from Handlebars', function () {
       content: 'A comment without indent.\n',
       code: '{{>some-partial}}',
       info: {
-        type: 'multiline',
+        type: 'multiline'
       }
     })
   })
@@ -43,22 +43,22 @@ describe('extract comments from Handlebars', function () {
       content: 'A comment with indent ...\n\n    ... and an other larger indent\n',
       code: '{{#if definitions}}',
       info: {
-        type: 'multiline',
+        type: 'multiline'
       }
     })
   })
 
   it('a comment with indent content and delimiters', function () {
     expect(comments['13']).toEqual({
-        begin: 13,
-        end: 15,
-        codeStart: 16,
-        content: 'Wholly indented comment\n    ',
-        code: '    {{>json-schema/definitions}}',
-        info: {
-          type: 'multiline',
-        }
+      begin: 13,
+      end: 15,
+      codeStart: 16,
+      content: 'Wholly indented comment\n    ',
+      code: '    {{>json-schema/definitions}}',
+      info: {
+        type: 'multiline'
       }
+    }
     )
   })
 
@@ -67,9 +67,8 @@ describe('extract comments from Handlebars', function () {
 describe('comment-only', function () {
   it('should not fail, if the hbs partial solely consists of a comment', function () {
     var str = fs.readFileSync(require.resolve('./fixtures/only-comments.hbs'))
-    var comments = extract(str, {
+    extract(str, {
       filename: 'only-comments.hbs'
     })
-    console.log(comments)
   })
 })

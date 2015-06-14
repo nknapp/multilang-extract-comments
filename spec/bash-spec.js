@@ -30,7 +30,7 @@ describe('extract comments from bash', function () {
       content: 'Ein Kommentar\nmit mehreren Zeilen\nund noch eine Zeile\n',
       code: 'export VAR=x',
       info: {
-        type: 'singleline',
+        type: 'singleline'
       }
     })
   })
