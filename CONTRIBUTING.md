@@ -25,11 +25,6 @@ a pull request (unless you're creating a failing test to increase test coverage 
 
 This repository uses [`standard`][standard-url] to maintain code style and consistency, 
 and to avoid style arguments.
-```
-npm i standard -g
-```
-
-It is intentional to don't have `standard`, `istanbul` and `coveralls` in the devDependencies. Travis will handle all that stuffs. That approach will save bandwidth also installing and development time.
 
 [standard-image]: https://cdn.rawgit.com/feross/standard/master/badge.svg
 [standard-url]: https://github.com/feross/standard
