@@ -1,6 +1,6 @@
 {
   "name": "multilang-extract-comments",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Extract comments from source files of various languages",
   "repository": {
     "type": "git",
@@ -33,7 +33,6 @@
     "standard": "^3.11.0",
     "verb": "git://github.com/verbose/verb",
     "verb-cli": "git://github.com/verbose/verb-cli"
-    
   },
   "keywords": [
     "extract",
