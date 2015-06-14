@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 * Updated README, new version of .verb for generating README
 
+
+## Upcoming
+
+### Fixes
+
+* Use current version of *comment patterns*
+
 ## v0.2.0 - 2015-06-14
 
 ### Add
