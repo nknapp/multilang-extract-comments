@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+
+### Fixes
+
+* Updated README, new version of .verb for generating README
+
 ## v0.2.0 - 2015-06-14
 
 ### Add
