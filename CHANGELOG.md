@@ -9,7 +9,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 * Updated README, new version of .verb for generating README
 
 
-## Upcoming
+## v0.2.2 - 2015-06-14
 
 ### Fixes
 
