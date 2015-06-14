@@ -28,7 +28,10 @@ describe('extract comments from bash', function () {
       end: 5,
       codeStart: 6,
       content: 'Ein Kommentar\nmit mehreren Zeilen\nund noch eine Zeile\n',
-      code: 'export VAR=x'
+      code: 'export VAR=x',
+      info: {
+        type: 'singleline',
+      }
     })
   })
 })

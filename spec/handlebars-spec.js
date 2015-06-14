@@ -28,7 +28,10 @@ describe('extract comments from Handlebars', function () {
       end: 3,
       codeStart: 4,
       content: 'A comment without indent.\n',
-      code: '{{>some-partial}}'
+      code: '{{>some-partial}}',
+      info: {
+        type: 'multiline',
+      }
     })
   })
 
@@ -38,18 +41,24 @@ describe('extract comments from Handlebars', function () {
       end: 10,
       codeStart: 11,
       content: 'A comment with indent ...\n\n    ... and an other larger indent\n',
-      code: '{{#if definitions}}'
+      code: '{{#if definitions}}',
+      info: {
+        type: 'multiline',
+      }
     })
   })
 
   it('a comment with indent content and delimiters', function () {
     expect(comments['13']).toEqual({
-      begin: 13,
-      end: 15,
-      codeStart: 16,
-      content: 'Wholly indented comment\n    ',
-      code: '    {{>json-schema/definitions}}'
-    }
+        begin: 13,
+        end: 15,
+        codeStart: 16,
+        content: 'Wholly indented comment\n    ',
+        code: '    {{>json-schema/definitions}}',
+        info: {
+          type: 'multiline',
+        }
+      }
     )
   })
 

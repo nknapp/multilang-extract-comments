@@ -2,6 +2,13 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+
+### Add
+
+* Include `info`-block of matches capture group from `comment-pattern`'s output
+    to show whether the comment is a apidoc-comment or not
+
 ## v0.1.2 - 2015-05-24
 ### Fixes
 

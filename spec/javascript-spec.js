@@ -30,10 +30,15 @@ describe('extract comments from javascript', function () {
         begin: 1,
         end: 5,
         code: 'var foo = "bar";',
-        codeStart: 6
+        codeStart: 6,
+        info: {
+          apidoc: true,
+          type: 'multiline'
+        }
       }
     })
   })
+
 
   it('should work with comments that have slashes.', function () {
     extract('/**\n * this /is/ a/ comment\n*/\nnext line\n').should.eql({
@@ -42,7 +47,11 @@ describe('extract comments from javascript', function () {
         begin: 1,
         end: 3,
         code: 'next line',
-        codeStart: 4
+        codeStart: 4,
+        info: {
+          apidoc: true,
+          type: 'multiline'
+        }
       }
     })
   })
