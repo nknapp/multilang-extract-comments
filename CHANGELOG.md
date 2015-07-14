@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## Upcoming
+
+### Documentation
+
+* README update with better JsDoc
+
 ## v0.2.1 - 2015-06-14
 
 ### Fixes
