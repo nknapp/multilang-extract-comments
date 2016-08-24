@@ -21,7 +21,7 @@
     "format": "standard --format"
   },
   "dependencies": {
-    "comment-patterns": "^0.7.0",
+    "comment-patterns": "^0.9.0",
     "line-counter": "^1.0.3",
     "lodash": "^3.9.3",
     "quotemeta": "0.0.0"
