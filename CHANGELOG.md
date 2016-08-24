@@ -2,11 +2,11 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## Upcoming
+## v0.2.3 - 2016-08-23
 
-### Documentation
+### Fixes
 
-* README update with better JsDoc
+* Update `comment-patterns` dependency 
 
 ## v0.2.1 - 2015-06-14
 
@@ -31,7 +31,7 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 ## v0.1.2 - 2015-05-24
 ### Fixes
 
-* **Issue #1**: Change computation of last comment line to be one character earlier. 
+* **Issue #1**: Change computation of last comment line to be one character earlier.
 
 ## v0.1.1 - 2015-05-23
 ### Fixes
@@ -40,4 +40,3 @@ This project adheres to [Semantic Versioning](http://semver.org/).
 
 ## v0.1.0 - 2015-05-23
 ### Initial version
-
