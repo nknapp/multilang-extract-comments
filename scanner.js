@@ -42,7 +42,6 @@ function Scanner (pattern) {
         return i
       }
     }
-    console.log(commentMatch)
     throw new Error('No comment-part had a match. This should not happen')
   }
 
