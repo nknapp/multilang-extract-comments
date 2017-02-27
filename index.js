@@ -31,7 +31,7 @@ function extract (str, fn, options) {
   //   nameMatchers: [".asm"],
   //   singleLineComment: [{ start: ";" }]
   // }
-  if(typeof(options.pattern) !== 'undefined'){
+  if(typeof(options) !== 'undefined' && typeof(options.pattern) !== 'undefined'){
       regexp = require('comment-patterns/build/variations/regexes')(options.pattern);
   }else{
       regexp = cp.regex(filename);
