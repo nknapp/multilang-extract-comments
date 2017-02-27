@@ -22,7 +22,20 @@ function extract (str, fn, options) {
   }
   // default filename is a javascript file (for backwards compatibility)
   var filename = (options && options.filename) || 'abc.js'
-  var regexp = cp.regex(filename)
+  var regexp = "";
+
+  // check for custom comment pattern
+  // for example support for assembler files may look like the following:
+  // {
+  //   name: "assembler",
+  //   nameMatchers: [".asm"],
+  //   singleLineComment: [{ start: ";" }]
+  // }
+  if(typeof(options.pattern) !== 'undefined'){
+      regexp = require('comment-patterns/build/variations/regexes')(options.pattern);
+  }else{
+      regexp = cp.regex(filename);
+  }
 
   var result = {}
 
