@@ -14,6 +14,17 @@ verb.helper('extractHbs', function (string) {
   })
 })
 
+verb.helper('extractCustom', function (string) {
+  return require('./')(string, {
+    pattern: {
+      name: 'Powershell',
+      nameMatchers: ['.ps1'],
+      singleLineComment: [{ start: '#' }],
+      multiLineComment: [{ start: '<#', middle: '', end: '#>'}]
+    }
+  })
+})
+
 verb.helper('stringifyPretty', function (obj) {
   return JSON.stringify(obj, undefined, 2)
 })

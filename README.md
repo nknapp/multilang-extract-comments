@@ -107,6 +107,70 @@ The variable `comments` now contains:
 }
 ```
 
+## Example (Custom)
+
+For the following string:
+
+```ps1
+<#
+   A powershell multiline-comment
+   with multiple lines
+ #>
+Function  aLineOfCode {
+}
+
+# A single line comment
+# More of it directly below
+Function anotherFunction () {
+  Write-Output "test"
+}
+
+anotherFunction
+```
+
+and the following code
+
+```js
+var options = {
+  pattern: {
+    name: 'Powershell',
+    nameMatchers: ['.ps1'],
+    singleLineComment: [{ start: '#' }],
+    multiLineComment: [{ start: '<#', middle: '', end: '#>'}]
+  }
+}
+var comments = require('multilang-extract-comments')(string,options);
+```
+
+The variable `comments` now contains:
+
+```json
+{
+  "1": {
+    "begin": 1,
+    "end": 4,
+    "codeStart": 5,
+    "content": "A powershell multiline-comment\nwith multiple lines\n ",
+    "info": {
+      "type": "multiline"
+    },
+    "code": "Function  aLineOfCode {"
+  },
+  "8": {
+    "begin": 8,
+    "end": 9,
+    "codeStart": 10,
+    "content": "A single line comment\nMore of it directly below\n",
+    "info": {
+      "type": "singleline"
+    },
+    "code": "Function anotherFunction () {"
+  }
+}
+```
+
+Also have a look at the usage example of `extract-comments`
+
 ### API
 
 TODO
@@ -121,7 +185,7 @@ $ npm i -d && npm test
 
 ## Contributing
 
-Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/nknapp/multilang-extract-comments/issues/new)
+Pull requests and stars are always welcome. For bugs and feature requests, [please create an issue](https://github.com/nknapp/multilang-extract-comments/issues/new).
 
 see [CONTRIBUTING.md](./CONTRIBUTING.md)
 
@@ -138,10 +202,10 @@ see [CHANGELOG.md](./CHANGELOG.md)
 
 ## Related
 
-* [comment-patterns](https://github.com/nknapp/comment-patterns): A list of comment-patterns for different languages
-* [extract-comments](https://github.com/jonschlinkert/extract-comments): Extract code comments from string or from a glob of files.
+* [comment-patterns](https://www.npmjs.com/package/comment-patterns): A list of comment-patterns for different languages | [homepage](https://github.com/nknapp/comment-patterns)
+* [extract-comments](https://www.npmjs.com/package/extract-comments): Uses esprima to extract line and block comments from a string of JavaScript. Also optionally… [more](https://www.npmjs.com/package/extract-comments) | [homepage](https://github.com/jonschlinkert/extract-comments)
 
 ## License
 
-Copyright © 2015 Nils Knappmeier
+Copyright © 2015-2017 Nils Knappmeier
 Released under the MIT license.
