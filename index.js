@@ -1,7 +1,7 @@
 /*!
  * multilang-extract-comments <https://github.com/nknapp/multilang-extract-comments>
  *
- * Copyright (c) 2015 Nils Knappmeier.
+ * Copyright (c) 2015-2017 Nils Knappmeier.
  * Released under the MIT license.
  */
 
@@ -22,7 +22,14 @@ function extract (str, fn, options) {
   }
   // default filename is a javascript file (for backwards compatibility)
   var filename = (options && options.filename) || 'abc.js'
-  var regexp = cp.regex(filename)
+  var regexp = {}
+
+  // check for custom comment pattern
+  if (options && options.pattern) {
+    regexp = require('comment-patterns/build/variations/regexes')(options.pattern)
+  } else {
+    regexp = cp.regex(filename)
+  }
 
   var result = {}
 
