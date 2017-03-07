@@ -2,6 +2,12 @@
 
 This project adheres to [Semantic Versioning](http://semver.org/).
 
+## v0.3.0 - 2017-03-07
+
+### Add
+
+* add support for custom comment patterns (#7)  (by @CTrauma)
+
 ## v0.2.3 - 2016-08-23
 
 ### Fixes
