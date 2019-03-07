@@ -20,7 +20,7 @@ verb.helper('extractCustom', function (string) {
       name: 'Powershell',
       nameMatchers: ['.ps1'],
       singleLineComment: [{ start: '#' }],
-      multiLineComment: [{ start: '<#', middle: '', end: '#>'}]
+      multiLineComment: [{ start: '<#', middle: '', end: '#>' }]
     }
   })
 })
