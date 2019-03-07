@@ -61,7 +61,6 @@ describe('extract comments from Handlebars', function () {
     }
     )
   })
-
 })
 
 describe('comment-only', function () {

@@ -15,11 +15,12 @@
 /* deps:mocha */
 require('should')
 var context = require('code-context')
+var path = require('path')
 var extract = require('../')
 var fs = require('fs')
 
 function read (fp) {
-  return fs.readFileSync(__dirname + '/fixtures/' + fp, 'utf8')
+  return fs.readFileSync(path.join(__dirname, '/fixtures/', fp), 'utf8')
 }
 
 describe('extract comments from javascript', function () {
@@ -62,15 +63,17 @@ describe('extract comments from javascript', function () {
       return comment
     })
 
-    comments['1316'].context.should.eql([{
-      begin: 1,
-      type: 'property',
-      receiver: 'module',
-      name: 'exports',
-      value: 'Assemble',
-      string: 'module.exports',
-      original: 'module.exports = Assemble;'
-    }])
+    comments['1316'].context.should.eql([
+      {
+        begin: 1,
+        type: 'property',
+        receiver: 'module',
+        name: 'exports',
+        value: 'Assemble',
+        string: 'module.exports',
+        original: 'module.exports = Assemble;'
+      }
+    ])
   })
 
   it('should add starting and ending numbers for a comment:', function () {

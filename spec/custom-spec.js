@@ -23,7 +23,7 @@ describe('extract comments from file with custom comment pattern', function () {
       name: 'Powershell',
       nameMatchers: ['.ps1'],
       singleLineComment: [{ start: '#' }],
-      multiLineComment: [{ start: '<#', middle: '', end: '#>'}]
+      multiLineComment: [{ start: '<#', middle: '', end: '#>' }]
     }
   }
   var str = fs.readFileSync(require.resolve('./fixtures/body.ps1'))
@@ -68,5 +68,4 @@ describe('extract comments from file with custom comment pattern', function () {
     }
     )
   })
-
 })
