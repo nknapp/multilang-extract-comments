@@ -17,31 +17,31 @@ function read (fp) {
   )
 }
 
-describe('extract comments from C', function () {
-  var str = read('c.c')
+describe('extract comments from Java', function () {
+  var str = read('java.java')
   var comments = extract(str, {
-    filename: 'c.c'
+    filename: 'java.java'
   })
 
   it('should handle single line comments:', function () {
-    expect(comments['3']).toEqual({
-      begin: 3,
-      end: 3,
-      codeStart: 4,
+    expect(comments['1']).toEqual({
+      begin: 1,
+      end: 1,
+      codeStart: 2,
       content: 'TODO: A single line comment\n',
       info: { type: 'singleline' },
-      code: 'int main()'
+      code: 'class Simple{  '
     })
   })
 
   it('should handle multiline comments:', function () {
-    expect(comments['6']).toEqual({
-      begin: 6,
-      end: 8,
-      codeStart: 9,
+    expect(comments['4']).toEqual({
+      begin: 4,
+      end: 6,
+      codeStart: 7,
       content: 'TODO: A multiline-comment\n   with multiple lines\n   ',
       info: { type: 'multiline' },
-      code: '    printf("Hello World");'
+      code: '    public static void main(String args[]){  '
     })
   })
 })

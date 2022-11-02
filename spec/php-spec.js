@@ -23,8 +23,6 @@ describe('extract comments from PHP', function () {
     filename: 'php.php'
   })
 
-  console.log('PHP', { comments })
-
   it('should handle single line comments:', function () {
     expect(comments['11']).toEqual({
       begin: 11,
