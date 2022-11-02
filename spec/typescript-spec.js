@@ -2,8 +2,7 @@
 
 /* global describe */
 /* global it */
-// /* global xdescribe */
-// /* global xit */
+/* global expect */
 
 /* deps:mocha */
 require('should')

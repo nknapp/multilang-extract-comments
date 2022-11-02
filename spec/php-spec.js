@@ -17,32 +17,36 @@ function read (fp) {
   )
 }
 
-describe('extract comments from C#', function () {
-  var str = read('csharp.cs')
+describe('extract comments from PHP', function () {
+  var str = read('php.php')
   var comments = extract(str, {
-    filename: 'csharp.cs'
+    filename: 'php.php'
   })
 
+  console.log('PHP', { comments })
+
   it('should handle single line comments:', function () {
-    expect(comments['1']).toEqual({
-      begin: 1,
-      end: 1,
-      codeStart: 2,
+    expect(comments['11']).toEqual({
+      begin: 11,
+      end: 11,
+      codeStart: 12,
       content: 'TODO: A single line comment\n',
       info: { type: 'singleline' },
-      code: 'using System;'
+      code: "                $x = 'Hello, World!';"
     })
   })
 
   it('should handle multiline comments:', function () {
-    expect(comments['10']).toEqual({
-      begin: 10,
-      end: 12,
-      codeStart: 13,
+    expect(comments['14']).toEqual({
+      begin: 14,
+      end: 17,
+      codeStart: 18,
       content:
-        'TODO: A multiline-comment\n           with multiple lines\n           ',
+        '               TODO: A multiline-comment\n' +
+        '               with multiple lines\n' +
+        '               ',
       info: { type: 'multiline' },
-      code: '            Console.WriteLine("Hello World!");'
+      code: '                echo $x;'
     })
   })
 })

@@ -17,32 +17,33 @@ function read (fp) {
   )
 }
 
-describe('extract comments from C#', function () {
-  var str = read('csharp.cs')
+describe('extract comments from C', function () {
+  var str = read('c.c')
   var comments = extract(str, {
-    filename: 'csharp.cs'
+    filename: 'c.c'
   })
 
+  console.log('C', { comments })
+
   it('should handle single line comments:', function () {
-    expect(comments['1']).toEqual({
-      begin: 1,
-      end: 1,
-      codeStart: 2,
+    expect(comments['3']).toEqual({
+      begin: 3,
+      end: 3,
+      codeStart: 4,
       content: 'TODO: A single line comment\n',
       info: { type: 'singleline' },
-      code: 'using System;'
+      code: 'int main()'
     })
   })
 
   it('should handle multiline comments:', function () {
-    expect(comments['10']).toEqual({
-      begin: 10,
-      end: 12,
-      codeStart: 13,
-      content:
-        'TODO: A multiline-comment\n           with multiple lines\n           ',
+    expect(comments['6']).toEqual({
+      begin: 6,
+      end: 8,
+      codeStart: 9,
+      content: 'TODO: A multiline-comment\n   with multiple lines\n   ',
       info: { type: 'multiline' },
-      code: '            Console.WriteLine("Hello World!");'
+      code: '    printf("Hello World");'
     })
   })
 })
